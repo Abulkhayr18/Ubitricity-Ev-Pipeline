@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: mart_network_health
+    description: Charger operational and fault rates by UK region
+    columns:
+      - name: region
+        tests:
+          - not_null
+      - name: total_chargers
+        tests:
+          - not_null
+      - name: fault_rate_pct
+        tests:
+          - not_null
+
+  - name: mart_competitor_analysis
+    description: Ubitricity vs competitor charger counts by region
+    columns:
+      - name: operator
+        tests:
+          - not_null
+      - name: total_chargers
+        tests:
+          - not_null
+
+  - name: mart_coverage_gap
+    description: UK towns ranked by charger density — underserved areas first
+    columns:
+      - name: town
+        tests:
+          - not_null
+      - name: coverage_score
+        tests:
+          - not_null
+
+  - name: mart_connector_distribution
+    description: Connector type breakdown by region
+    columns:
+      - name: connector_type
+        tests:
+          - not_null
+      - name: charger_count
+        tests:
+          - not_null

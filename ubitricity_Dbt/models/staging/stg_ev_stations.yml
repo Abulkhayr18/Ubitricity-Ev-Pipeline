@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_ev_stations
+    description: Cleaned and filtered UK EV charging stations from Silver layer
+    columns:
+      - name: id
+        description: Unique chargepoint identifier
+        tests:
+          - not_null
+          - unique
+      - name: lat
+        description: Latitude coordinate
+        tests:
+          - not_null
+      - name: lon
+        description: Longitude coordinate
+        tests:
+          - not_null
+      - name: country
+        description: Country code filtered to GB only
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - GB
+      - name: status
+        description: Operational status of the chargepoint
+        tests:
+          - not_null

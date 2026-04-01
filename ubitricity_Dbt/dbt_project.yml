@@ -1,0 +1,14 @@
+name: ubitricity_ev_pipeline
+version: 1.0.0
+profile: ubitricity_ev_pipeline
+
+model-paths: ["models"]
+test-paths: ["tests"]
+docs-paths: ["docs"]
+
+models:
+  ubitricity_ev_pipeline:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
